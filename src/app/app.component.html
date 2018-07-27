@@ -1,0 +1,50 @@
+<h2>Reactive Form</h2>
+<h4>Multiple name & date field form</h4>
+<hr>
+<form [formGroup]="myForm" novalidate (ngSubmit)="onSave(myForm)">
+	<div class="row">
+		<label>Your Name : </label>
+		<input type="text" formControlName="name" name="username" placeholder="enter user name" />
+	</div>
+
+	<div formArrayName="vendors">
+		<p-dataTable [value]="cars" expandableRows="true">
+			<p-column expander="true" styleClass="col-icon"></p-column>
+			<p-column field="vin" header="Vin"></p-column>
+			<p-column field="brand" header="Brand"></p-column>
+			<p-column field="color" header="Color"></p-column>
+			<ng-template let-i="rowIndex" let-car pTemplate="rowexpansion">
+				<div class="ui-grid ui-grid-responsive ui-fluid">
+					<div class="ui-grid-row">
+						<div formGroupName="{{i}}" class="ui-grid-col-9">
+							Brand UniqueID : {{car.brand}}'s UID is => <b> {{car.vin}} @pos = {{i}}</b>
+							&nbsp; &nbsp; <a class="btn btn-primary" (click)="onAddRow(i,j,car)">ADD</a>
+							<div formArrayName="rangelist">
+								<div *ngFor="let range of myForm.controls.vendors.controls[i].controls.rangelist.controls; let j=index">
+									<div [formGroupName]="j" class="ui-grid-row">
+										Start Date : <input type="date" formControlName="startdate" name="startdate" placeholder="value name {{j}}" />
+										&nbsp; &nbsp; End Date : <input type="date" formControlName="enddate" name="enddate" placeholder="date {{j}}" />
+										&nbsp; &nbsp;  <a class="btn btn-danger" *ngIf="myForm.controls.vendors.controls[i].controls.rangelist.controls.length > 1" (click)="onRemoveRow(i,j,car)">DEL {{j+1}}</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ng-template>
+		</p-dataTable>
+	</div>
+
+	<div class="text-center">
+		<input type="submit" class="btn btn-success" name="submitbutton" value="submit">
+		<input type="reset" class="btn btn-danger" name="resetbutton" value="reset">
+	</div>
+	<hr>
+	<div class="margin-20">
+		<div>myForm details:-</div>
+		<pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
+		<pre>form value: <br>{{myForm.value | json}}</pre>
+	</div>
+
+
+</form>

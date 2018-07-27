@@ -1,0 +1,21 @@
+/* +++++++ Prime NG CHIPS +++++++ */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+.ui-chips > ul.ui-inputtext,
+.ui-chips > ul.ui-inputtext:focus {
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+.ui-chips .ui-chips-input-token {
+  display: none;
+}
+
+.ui-table .ui-table-tbody > tr > td {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ui-paginator .ui-paginator-element {
+  display: none;
+}
