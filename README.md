@@ -1,6 +1,16 @@
 # angular-p-data-table-dynamic-forms
+# Live Demo on 
+Link  : https://stackblitz.com/edit/angular-p-data-table-dynamic-forms
+
+Angular 5
+PrimeNG 5.2.3
+
+
+# angular-p-data-table-dynamic-forms
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
+
+
 
 ## Development server
 

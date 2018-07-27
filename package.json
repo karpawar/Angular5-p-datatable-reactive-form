@@ -1,6 +1,6 @@
 {
-  "name": "angular-template",
-  "description": "",
+  "name": "kp-angular-primeng-p-datatable-reactive-dynamic-form",
+  "description": "Although P-data table from PrimeNG is now depricated by new version of primeng. Just a POC to try to capture dynamic values per row from a reactive dynamic form. same can be implemented with Prime NG latest Turbo Tables",
   "homepage": "https://stackblitz.com/edit/angular-p-data-table-dynamic-forms",
   "dependencies": {
     "@angular/animations": "5.1.2",
